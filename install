@@ -1,0 +1,19 @@
+Check which version of Java is installed:
+
+# java -version
+Use the latest version of Oracle Java 6 or 7 on all nodes. If you need help installing Java, see Installing the Oracle JRE and JNA.
+
+Add the DataStax repository to the /etc/apt/sources.list.d/datastax.sources.list file. For example:
+
+deb http://<username>:<password>@debian.datastax.com/enterprise stable main
+Add the DataStax repository key to your Aptitude trusted keys:
+
+$ curl -L https://debian.datastax.com/debian/repo_key | sudo apt-key add -
+Note
+If you have trouble adding the key or getting the packages, use http instead of https.
+
+Install the packages:
+
+$ sudo apt-get update
+$ sudo apt-get install dse-full ## Installs DataStax Enterprise only.
+$ sudo apt-get install dse-full opscenter ## Installs both DataStax Enterprise and OpsCenter.
